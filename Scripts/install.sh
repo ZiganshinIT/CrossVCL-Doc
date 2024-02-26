@@ -10,7 +10,7 @@ echo "Clean-up unused packages"
 sudo apt autoremove -y
 cd ~
 echo "Downloading Linux PAServer for Alexandria 11.3 (22.0)"
-wget https://altd.embarcadero.com/releases/studio/22.0/113/LinuxPAServer22.0.tar.gz 
+wget https://altd.embarcadero.com/releases/studio/22.0/1131/LinuxPAServer22.0.tar.gz 
 echo "Setting up directories to extract PA Server into"
 mkdir PAServer
 mkdir PAServer/22.0
