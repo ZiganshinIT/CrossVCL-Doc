@@ -29,7 +29,7 @@ Embarcodero Delphi версии >= 10.3 с компилятором macOS.
 
 ##### На удаленной системе
 
-Для соединения необходимо чтобы системы находились в одной сети. Если используется система из `VirtualBox` необходимо выбрать `Сетевой мост` в качестве типа подключения. Это можно сделать в
+Для соединения системы должны находились в одной сети. Если используется система из `VirtualBox` необходимо выбрать `Сетевой мост` в качестве типа подключения. Это можно сделать в
 ```
 Настройки -> Сеть
 ```
@@ -40,7 +40,7 @@ Embarcodero Delphi версии >= 10.3 с компилятором macOS.
 ```
 После устанвоки запустить PAServer командой
 ```
-> bash pa22.sh
+> bash ~/pa22.sh
 ```
 и нажать Enter.
 
@@ -56,8 +56,6 @@ Tools -> Options -> Deployment -> Connection Profile Manager
 Далее необходимо ввести IP-адрес удаленной системы, который можно получить введя в командной строке, где запущен PAServer, ключ `i`:
 
 ```
-Connection Profile password <press Enter for no password>: 
-
 Starting Platform Assistant Server on port 64211
 
 Type ? for available commands
@@ -98,10 +96,10 @@ Project -> Deployment
 #### Ошибки и их решения
 
 ##### CrossVCL не поддерживает `CustomTitleBar`
-В Object Inspector необходимо отключить свойства `CustomTitleBar`, это можно сделать указав `False` подсвойстве Enable.
+В Object Inspector необходимо отключить свойства `CustomTitleBar`, это можно сделать указав `False` в подсвойстве Enable.
 
 ##### CrossVCL не поддерживае код на Assembler
-Функции и процедуру использующие язык ассембера небходимо пометить диретивой `{%IFDEF MSWINDOWS} {$ENDIF}` или переписать посредством Delphi.
+Функции и процедуру использующие язык ассембера небходимо пометить директивой `{%IFDEF MSWINDOWS} {$ENDIF}` или переписать посредством языка Delphi.
 
 ##### Ошибка [DCC Error] E2597 C:\Program Files (x86)\CrossVcl\Lib\22.0\Linux64\Debug\Winapi.Windows.o:Winapi.Windows:function Winapi::Windows::OpenFileMapping(unsigned int, int, char16_t*): error: undefined reference to 'OpenFileMappingW'
 Готоврит о том что CrossVCL не поддерживает функцию OpenFileMappingW.
