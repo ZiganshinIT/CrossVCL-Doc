@@ -1,6 +1,6 @@
 ## Портирование посредством Cross VCL
 
-**CrossVCL** — это набор инструментов для разработчиков Delphi, которые позволяют создавать приложения VCL для macOS и Linux.
+**CrossVCL** — это набор инструментов для разработчиков Delphi, которые позволяют создавать приложения VCL для MacOS и Linux.
 
 CrossVCL охватывает только пользовательскую часть интерфейса WinAPI (кроме DirectX). Для части приложения, не связанных с пользовательским интефйесом, необходимо использовать кроссплатформенные процедуры и функции.
 
@@ -94,3 +94,14 @@ Project -> Deployment
 Динамические библеотеки на Linux имеют расширение `.so`, на MacOS `.lib`.
 
 Теперь можно компилировать проект.
+
+#### Ошибки и их решения
+
+##### CrossVCL не поддерживает `CustomTitleBar`
+В Object Inspector необходимо отключить свойства `CustomTitleBar`, это можно сделать указав `False` подсвойстве Enable.
+
+##### CrossVCL не поддерживае код на Assembler
+Функции и процедуру использующие язык ассембера небходимо пометить диретивой `{%IFDEF MSWINDOWS} {$ENDIF}` или переписать посредством Delphi.
+
+##### Ошибка [DCC Error] E2597 C:\Program Files (x86)\CrossVcl\Lib\22.0\Linux64\Debug\Winapi.Windows.o:Winapi.Windows:function Winapi::Windows::OpenFileMapping(unsigned int, int, char16_t*): error: undefined reference to 'OpenFileMappingW'
+Готоврит о том что CrossVCL не поддерживает функцию OpenFileMappingW.

@@ -6,6 +6,8 @@ echo "Upgrading any outdated pacakges"
 sudo apt full-upgrade -y
 echo "Install new packages necessary for Delphi & FMXLinux"
 sudo apt install joe python3 libpython3-dev wget p7zip-full curl libgtk-3-dev openssh-server build-essential zlib1g-dev libgtk-3-dev libcurl4-gnutls-dev libncurses5 xorg libgl1-mesa-dev libosmesa-dev libgtk-3-bin -y
+echo "Install Open GL necessary packages"
+sudo apt-get install freeglut3-dev libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev libglfw3-dev libgles2-mesa-dev
 echo "Clean-up unused packages"
 sudo apt autoremove -y
 cd ~
